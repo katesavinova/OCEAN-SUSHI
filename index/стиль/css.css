@@ -1,0 +1,327 @@
+
+/*****************************************
+стили для всех элементов
+******************************************/
+
+*{
+    padding:0;
+	margin:0;
+	box-sizing: border-box;
+	color:black;
+}
+
+body{
+	color:white;/*цвет шрифта*/
+	font-family: 'Roboto', sans-serif;/*шрифт*/
+	font-weight:400;/*ширина шрифта*/
+	font-size:20px;/*размер шрифта*/
+	text-rendering: optimizeLegibility;
+}
+.col-1 { width: 8.33%;} /* расчечивание экрана на секторы*/
+.col-2 {width: 16.66% ; } 
+.col-3 { width: 25%;}
+.col-4 { width: 33.33%;} 
+.col-5 { width: 41.66%;} 
+.col-6 { width: 50%;}
+.col-7 { width: 58,33%;} 
+.col-8 { width: 66.66%;} 
+.col-9 { width: 75%;}
+.col-10 { width: 83.33%;} 
+.col-11 { width: 91.66%;} 
+.col-12 { width: 100%;}
+[class*="col-"] { 
+float: left;
+padding: 3%; /*отступ между колонками*/
+border: 1px;
+}
+section{
+	padding:100px 0px;
+	/*пустое пространство,которое отделяет текст от пространства выше*/
+    margin-bottom: 40px;
+	clear: both;
+}
+.float-clearing{
+	zoom: 1;
+}
+.float-clearing after:{
+    zoom: 1;
+	content: " ";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+/*****************************************
+стили header
+******************************************/
+header{
+	background-image:linear-gradient(rgba(0,0,0,0.4), rgba(71,44,107,1)),url(../изображения/8.jpg);
+	height:100vh;/*высота фото 100% окна браузера*/
+	background-position:center;/*фон по центру*/
+    background-size:cover;/*размер во весь экран*/
+}
+h1{
+    margin: 0em;
+}
+h2{ 
+	font-weight: 300;/*жирность текста*/ 
+	text-align: center;
+}
+h2:after{/*полоска после заголовка*/
+	display: block;
+	content:" ";
+	width:340px;
+	margin:0 auto;
+	margin-top:30px;
+	margin-bottom:30px;
+	height:2px; 
+	background-color:purple;
+}
+h3{
+	font-size:80%;
+	text-transform: uppercase;
+	letter-spacing:5px;
+	word-spacing:1px;
+	text-align:center;
+	margin-bottom:30px;
+}
+
+#par{
+	margin-top:30px;
+	text-align: center;
+}
+#header-title{
+	
+	padding:15px;/* увеличение ширины выделение т.е белого фона текста*/
+	margin-left:8.33%;/*отступ вправо*/
+	text-transform: uppercase;/*все буквы заглавные*/
+	max-width: 65%;
+	letter-spacing:0.179489em;/*расстояние между буквами*/
+    font-size:2.8em;
+    line-height:1.3em;
+	font-weight:400;
+	font-style:normal;
+}
+#header-button{
+	
+	margin-top:20px;/*отступ от загаловка*/
+	margin-left:8.33%;
+	/*max-width:27%;ширина белого выделения*/
+}
+.header-text{
+	padding-top:150px;/*отступ от верха экрана*/
+}
+
+#log-text{
+	float:left;
+}
+
+#log-text a{
+	text-decoration: none;/*убираем подчёркивание у ссылки*/
+	text-transform: uppercase;/*текст капсом*/
+	color:white;
+	letter-spacing: 8px;/*расстояние между буквами*/
+}
+
+#min-nav{
+    float:right;/*пункты друг за другом вправо*/
+    list-style:none;	/*убираем точки в пунктах*/
+}
+
+#min-nav li{ /*для пунктов, находящихся в мин-нав*/
+	display: inline-block;/*расположение пунктов в строку*/
+    margin-right: 30px;/*отступ между пунктами*/
+}
+
+#min-nav li a:hover,/******при наведение курсора*****/
+#min-nav li a:active
+{/*для ссылок, находящихся в пунктах*/
+	background: purple;/*изменение цвета при наведение на ссылки вверху*/
+    padding:10px;
+	transition: background 0.5s;
+	opacity:1;/*яркая ссылка*/
+}
+
+#min-nav li a:link,/****без наведения курсора*******/
+#min-nav li a:visited
+{/*для ссылок, находящихся в пунктах*/
+	text-decoration: none;
+	text-transform: uppercase;
+	color:white;
+	opacity:0.7;/*тусклая ссылка*/
+}
+#sticky-nav{
+	position:fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	background-color:purple;
+	z-index: 9999;/*что бы меню не прятолось за фото, не исчезало*/
+}
+nav{
+	height: 60px;
+	padding: 24px;
+}
+
+#img{
+	height:60px;
+	width:auto;
+	float:left;
+	margin-left:10px;
+}
+/*****************************************
+секция для кнопок
+******************************************/
+.button:link,/*кнопки е обычное состояние*/
+.button:visited/*посещённая ссылка*/
+{
+	display:inline-block; /*кнопки ввиде блоков, следующих друг за другом*/
+	padding:10px 30px;/*расширение выделенной части во все стороны*/
+	text-decoration:none;/*ссылка без подчеркивания*/
+	color:white;
+	border-radius:120px;/*закругление кнопок*/
+	transition: background-color 1s, border 1s;/*при наведение курсора на ссылку окошечко снизу появляется через 1 секунду*/
+	}
+.butto-order:link,
+.butto-order:visited
+{
+	background:rgba(54,91,92,0.8);/*кнопка сделать заказ цвет*/
+	border: 1px solid rgba(43,69,70,0.8);/*контур кнопки"Сделать заказ"*/
+}
+.butto-more:link,
+.butto-more:visited
+{
+	border: 1px solid rgba(54,91,92);/*контур кнопки без фона*/
+}
+.button:hover,
+.button:active{/*ктопка во время активации*/
+	background:rgb(43,69,70);
+}
+
+.butto-order:hover,
+.butto-order:active/*ктопка во время активации*/
+{
+	border: 1px solid (rgb(43,69,70));/*контур кнопки*/
+}
+
+.butto-more:hover,
+.butto-more:active
+{
+	border: 1px solid rgb(43,69,70);/*контур кнопки без фона*/
+}
+/*****************************************
+             иконки
+******************************************/
+.iconss{
+	font-size:300%;
+	color: purple;
+	margin-bottom: 10px;
+}
+/*****************************************
+             изображения
+******************************************/
+.images-container{
+	list-style: none;
+	width:100%;
+}
+.images-container li{
+	display:block;
+	float:left;
+	width:25%;
+}
+/**************************************/
+/**********изображения двигаются*******/
+/**************************************/
+.fig {
+	width:100%;
+	overflow:hidden;/*избображение увелино и обрезано под верхние(скрыто)*/
+    background:black;
+}
+.fig img{
+	opacity:0.7;/*прозрачность изображений уменьшена*/
+	width:100%;
+	height: auto;
+	transform: scale(1.2);/*увеличивает на 120% избображение*/
+	transition: transform 1s;/*задержка во времени 1сек*/
+}
+.fig img:hover {/*при наведение мышкой*/
+	transform:scale(1.05);/* обратно уменьшает и получается, что изобр двигается*/
+    opacity: 1;/*прозрачность вернута обратно в полную*/
+    transition: transform 0,9s;
+}
+/************TELEFON******************/
+/*************************************/
+#telef{
+	width:290px;
+	height: 520px;
+}
+#style-telef{
+	margin-left:15%;
+	
+}
+.order-step{
+	margin-bottom:10px;
+	
+}
+.order-step div {
+	color: rgba(0, 132, 255, 0.753);
+	background: rgba(0, 255, 255, 0.205);/*кнопка сделать заказ цвет*/
+	border-radius: 50%;
+	width:50px;
+    height:50px;
+	font-size: 200%;
+	text-align: center;
+	opacity: 0.7;
+	float: left;
+	margin-right: 30px;
+}
+.order-step p {
+font-size: 30px;
+padding-top: 5px;
+margin-top: 80px;
+color: rgba(3, 13, 32, 0.678);
+font-family: 'Pacifico', cursive;
+}
+.app-button img{
+	height: 50px;
+	margin-right: 20px;
+}
+/******************************/
+/*********города***************/
+/******************************/
+.citi{
+	max-width:1140px;
+	margin:0 auto;
+}
+.col-3 img{ 
+width:100%;}
+.city-info{
+	font-size:10px;
+	letter-spacing:1px;
+	word-spacing:1px;
+	text-align:center;
+	margin-bottom:30px;
+	
+}
+.info-icon{
+	display: inline-block;
+	text-aling: center;
+	width: 30px;
+	color: rgb(0, 255, 255);
+	float:left;
+}
+.cities{
+	background-color: rgb(238, 237, 241)
+}
+/***************************/
+/*animation*/
+/**************************/
+.anim1
+{
+	opacity: 0;
+}
+.anim1.animated
+{
+	opacity: 1;
+}
